@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power BI Report with Terms of Use</title>
+    
+</head>
+<body>
+    <title>Power BI Report with Terms of Use</title>
+ <h1><ul><u>RLB Terms of Use</u></ul></h1>
+ <h3>
+    1) By accessing and using the RLB Database, you agree to comply with the following Terms and Conditions:<br><br>
+    
+    2) Access and Use: The RLB Database is intended for authorized RLB staff only. Access is granted solely for work-related purposes. Unauthorized access, sharing of login credentials, or use of the database for personal purposes is strictly prohibited.<br><br>
+    
+    3) Data Security: Users must ensure the confidentiality and security of the data within the RLB Database. Any breach of data security must be reported immediately to the IT/Data Analytics department. Users are responsible for maintaining the integrity of the data and preventing unauthorized access.<br><br>
+    
+    4) Intellectual Property: All data and materials within the RLB Database are the intellectual property of RLB. Unauthorized use, reproduction, or distribution of the database content is prohibited. Users are strictly forbidden from copying data or taking screenshots of the database content for personal use or sharing with RLB's competitors.<br><br>
+    
+    5) Compliance: Users must comply with all relevant laws, regulations, and RLB policies when using the database. Any misuse of the database may result in disciplinary action.<br>
+    </h3>
+ <!-- Checkboxes for agreement -->
+<form id="termsForm">
+    <input type="checkbox" id="agree" name="agree">
+    <label for="agree">I agree</label><br>
+    <input type="checkbox" id="disagree" name="disagree">
+    <label for="disagree">I disagree</label><br><br>
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+
+  <script>
+    function submitForm() {
+        var agreeCheckbox = document.getElementById('agree');
+        var disagreeCheckbox = document.getElementById('disagree');
+        
+        if (agreeCheckbox.checked && !disagreeCheckbox.checked) {
+            alert('You have successfully accepted RLB Terms and Conditions.');
+            window.location.href = 'https://app.powerbi.com/groups/me/reports/bb24800c-92ac-4db7-b00e-8673d57eb008/6c08700c58fcd4fb056a?experience=power-bi'; // Replace with your specified link
+        } else if (!agreeCheckbox.checked && disagreeCheckbox.checked) {
+            alert('You have disagreed with the RLB Terms and Conditions.');
+        } else {
+            alert('Please select either "I agree" or "I disagree".');
+        }
+    }
+    </script>
+    
+    </body>
+    </html>
